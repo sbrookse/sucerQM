@@ -8,6 +8,11 @@ from rdkit.Chem import Draw
 from rdkit.Chem import rdDetermineBonds
 import os, sys, inspect
 import glob
+# Get the absolute path to the directory containing the module
+# Adjust 'path/to/your/other_folder' to the actual path
+module_path = os.path.abspath('./src')
+# Add the path to sys.path
+sys.path.append(module_path)
 import Ring_Analysis as RA
 import Ring_Reconstruction as RR
 import py_rdl
@@ -18,15 +23,15 @@ os.chdir(os.path.dirname(__file__))
 
 # Get 5- and 6-membered pucker info that is used to provide input to the RR/RA package
 # These files are found in the same folder as the package when it is downloaded and can be edited
-c5_param_path = 'c5_pucker_params.csv'
+c5_param_path = 'src/c5_pucker_params.csv'
 params = pd.read_csv(c5_param_path)
 c5_params = [params['q2'], params['Phi_radians']]
 c5_states = params['State']
-c6_param_path = 'c6_pucker_params.csv'
+c6_param_path = 'src/c6_pucker_params.csv'
 params = pd.read_csv(c6_param_path)
 c6_params = [params['q2'], params['q3'], params['Phi_radians']]
 c6_states = params['State']
-sugar_info_path = 'Sugar_Info.xlsx'
+sugar_info_path = 'src/Sugar_Info.xlsx'
 sugar_info = pd.read_excel(sugar_info_path)
 
 # Circularly traverse numbering list to put ring atoms in correct order starting with C1
