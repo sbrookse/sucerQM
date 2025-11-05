@@ -5,7 +5,8 @@
 - sucer-QM is a set of python codes that enable the generation and energetic exploration of puckered conformations for any 5-membered (furanose) or 6-membered (pyranose) monosaccharide structures.
 - It accepts smile strings as inputs and generates puckered conformation files in pdb/xyz or gaussian input format based on specified cremer-pople parameters (q, $\theta$ for furanoses and q, $\theta$ and $\phi$ for pyranoses)
 - Ensuring energy minima for each pucker state involves the full exploration of the orientation of all exocyclic groups attached to the saccharide. To enable this sucer-QM has pre-defined functions (inital_dihedral_scan) that enable QM energetic scans of dihedral angles of exocyclic groups. This is undertaken in an iterative manner wherein each exocylcic group is scanned independently until no further lower-minima are observed.  
-- 
+
+ Collaborator: [Sean Brooks](https://github.com/sbrookse)
 
 ## Installation
 
