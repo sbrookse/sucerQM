@@ -14,9 +14,10 @@ This code requires the following pre-requisite packages to be installed.
 - RDKit
 - numpy
 - pandas
+- Matplotlib
 - RingAnalysis
 - RingReconstruction
-- pyrdl
+- py_rdl (RingDecomposerLib) (https://github.com/rareylab/RingDecomposerLib)]
 
 The supplied .yml file should install all the prerequisite packages and more...
 
