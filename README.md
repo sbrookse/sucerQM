@@ -8,7 +8,7 @@
 
  Collaborator: [Sean Brooks](https://github.com/sbrookse)
 
-## Installation
+## Dependencies
 
 This code requires the following pre-requisite packages to be installed.
 - RDKit
@@ -19,10 +19,6 @@ This code requires the following pre-requisite packages to be installed.
 - RingReconstruction (https://github.com/lucianlschan/RING)
 - py_rdl (RingDecomposerLib) (https://github.com/rareylab/RingDecomposerLib)]
 
-The supplied .yml file should install all the prerequisite packages and more...
-
-``` conda env create -f sucer-QM.yml ``` \
-``` conda activate sucer-QM ```
 
 ## Running sucer-QM
 * Step 0
