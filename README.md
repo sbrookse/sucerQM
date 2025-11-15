@@ -1,7 +1,7 @@
 # SUCER-qm 
 ### Saccharide pUcker Conformation and Energy exploreR using quantum mechanics
 
-![Example for xylose](xylose_gif.gif)
+![Example for xylose](xylose.gif)
 
 ## Overview
 - sucer-QM is a set of python codes that enable the generation and energetic exploration of puckered conformations for any 5-membered (furanose) or 6-membered (pyranose) monosaccharide structures.
