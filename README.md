@@ -33,24 +33,26 @@ This code requires the following pre-requisite packages to be installed.
     import pucker_gen as pg
     pg.generate_puckers('input')
     ```
-    - This will generate a folder called input containing folders named after each sugar whose pucker state is desired to be explored. If using relative path, the folder will generate in the same folder where the pucker_gen.py script is saved; this can be changed as desired using an absolute file path.
+    - Generates a folder called input containing folders named after each sugar whose pucker state is desired to be explored. If using relative path, the folder will generate in the same folder where the pucker_gen.py script is saved; this can be changed as desired using an absolute file path.
     - Each sugar folder contains sub-folders named after the pucker state and contains Gaussian 16 input files (.com) and .pdb files for the pucker state.
   - If you have access to an HPC workstation with Gaussian 16 installed, then you may run the following command to submit the QM calcualtions
   - ```
     sh submit.sh
     sh compile.sh
     ```
-    - 
-* Step 2 - Perform dihedral scans for exocyclic groups attached to the sugar
-  - kdjfa'lsdf
+* Step 2 - Perform initial dihedral scans for exocyclic groups attached to the sugar
   - ```
-    ksjdfasdf
-    asdfasdf
+    pg.initial_dihedral_scan('dihedral1', 'input')
+    - Generates a folder called dihedral1 based on the xyz outputs in the input folder. Each pucker state folder will contain subfolders for each exocyclic group, starting with 1 and counting up. Each of these exocyclic group folders contains a .com input file that scans the respective dihedral.
     ```
-    - This will generate gaussian input files for running dihedral scans for each individual exocyclic group.
-    -
-* Step 3 - Perform final optimizations of the lowest energy configurations identified from Step 2
-  - asdfkjasdf
-  - asdfkljasldkfj
-  - 
+* Step 3 - Repeat dihedral scans until no lower single-point energy geometries have been identified
+  - ```
+    pg.repeat_dihedral_scan('dihedral2', 'dihedral1')
+    - Generates a folder called dihedral2 based on the xyz outputs in the dihedral1 folder.
+    - Scans will be conducted on all dihedrals other than the dihedral that showed the local energy minimum in the last round of scans.
+    - Repeat this procedure [e.g. pg.repeat_dihedral_scan('dihedral3', 'dihedral2')] until the Next_Scan_Starting_Points folder that is located within the outputs folder for the most recent dihedral scan does not contain any .xyz files. This indicates that a local energy minimum has been identified for each exocyclic group.
+    ```
+* Step 4 - Perform final optimizations and frequency calculations for the lowest energy configurations identified from Step 2
+ - ```
+    pg.final_constrained('final_opt', 6)
 aaaa
