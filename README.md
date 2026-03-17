@@ -55,4 +55,3 @@ This code requires the following pre-requisite packages to be installed.
 * Step 4 - Perform final optimizations and frequency calculations for the lowest energy configurations identified from Step 2
  - ```
     pg.final_constrained('final_opt', 6)
-aaaa
