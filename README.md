@@ -53,5 +53,5 @@ This code requires the following pre-requisite packages to be installed.
     - Repeat this procedure [e.g. pg.repeat_dihedral_scan('dihedral3', 'dihedral2')] until the Next_Scan_Starting_Points folder that is located within the outputs folder for the most recent dihedral scan does not contain any .xyz files. This indicates that a local energy minimum has been identified for each exocyclic group.
     ```
 * Step 4 - Perform final optimizations and frequency calculations for the lowest energy configurations identified from Step 2
- - ```
+  - ```
     pg.final_constrained('final_opt', 6)
